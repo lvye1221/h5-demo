@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+		<link href="css/main.css" rel="stylesheet" />
+		<script src="js/jquery-2.1.0.js"></script>
+	</head>
+	
+	<body>
+		<img src="img/dingdang.jpg" class="bg"/>
+
+		<div id="danmubox">
+			<a id="textCSS" style=""></a>
+		</div>
+
+		<input type="text" name="text" id="text" value="" onkeydown="anxia()" />
+
+		<input type="button" name="btn" id="btn" value="发送" />
+		<input type="button" name="pbbtn" id="pbbtn" value="屏蔽" />
+
+		<p id="pp">字体颜色大小:</p>
+		<select name="颜色选择" id="duoxuan1">
+			<option value="红色">红色</option>
+			<option value="白色" selected>白色</option>
+			<option value="黄色">黄色</option>
+			<option value="绿色">绿色</option>
+		</select>
+		<select name="字体选择" id="duoxuan2">
+			<option value="H1">H1</option>
+			<option value="H2">H2</option>
+			<option value="H3"selected="">H3</option>
+			<option value="H4">H4</option>
+		</select>
+	</body>
+	<script type="text/javascript">
+		var danmubox=document.getElementById("danmubox");
+		var text1=document.getElementById("text");
+		var  btn=document.getElementById("btn");
+		var pbbtn=document.getElementById("pbbtn");
+		var duoxuan1=document.getElementById("duoxuan1");		
+		var duoxuan2=document.getElementById("duoxuan2");
+		var textCSS=document.getElementById("textCSS");
+		var danmucolor="white";
+		var danmusize="20px";
+		var pingbi=false;
+		var heightnum=0;
+		
+		
+		//要求加上 选择字体大小和颜色 屏蔽弹幕 //可加送礼物
+		
+		//设置字体颜色
+		duoxuan1.onchange=function(){
+			
+			//拿到选中项的索引
+			var index1=duoxuan1.selectedIndex;
+			//拿到选中项options的value
+			//如uoyao拿到选中项的text则用duoxuan1.options[index1].text\
+			if(duoxuan1.options[index1].value=="红色"){
+				danmucolor="red";
+			}
+			if(duoxuan1.options[index1].value=="白色"){
+				danmucolor="white";
+			}
+			if(duoxuan1.options[index1].value=="黄色"){
+				danmucolor="yellow";
+			}
+			if(duoxuan1.options[index1].value=="绿色"){
+				danmucolor="green";
+			}
+		}
+		
+		//设置字体大小
+	
+		duoxuan2.onchange=function(){
+			//拿到选中项的索引
+			var index2=duoxuan2.selectedIndex;
+			if(duoxuan2.options[index2].value=="H1"){
+				danmusize="100"+"px";
+				
+			}
+			if(duoxuan2.options[index2].value=="H2"){
+				danmusize="80"+"px";
+			}
+			if(duoxuan2.options[index2].value=="H3"){
+				danmusize="50"+"px";
+			}
+			if(duoxuan2.options[index2].value=="H4"){
+				danmusize="30"+"px";
+			}
+		}
+		
+		pbbtn.onclick=function(){
+			if(pingbi==false){
+				danmubox.style.display="none";
+				pingbi=true;
+			}else{
+				danmubox.style.display="block";
+				pingbi=false;
+			}
+		}
+		
+		btn.onclick=function(){	
+			heightnum+=10;
+			//一点 就让弹幕发出去 使用字符串构建一个a标签
+			if(heightnum>danmubox.offsetHeight){
+				heightnum=0;
+			}
+			//构建对象
+			var a=$("<a style='color: "+danmucolor+";font-weight: bolder;font-size: "+danmusize+"; position: absolute;left: 100%;top: "+heightnum+"px;display: block;'>"+text1.value+"</a>");
+			//添加
+			$(danmubox).append(a);
+			//清空
+			text1.value="";
+			//执行动画
+			$(a).animate({"left":"0px"},8000,"linear",function(){
+				//移除本体
+				$(this).remove();
+			});
+		}
+		
+	/*	//这么写keydown
+		function anxia(ev){
+			//alert("anxia");
+			if(ev.keyCode==13){
+		
+		}*/
+		
+		//回车发送弹幕
+		text1.onkeydown = function(ev){
+			if(ev.keyCode==13){
+				heightnum+=10;
+				//一点 就让弹幕发出去 使用字符串构建一个a标签s
+				if(heightnum>danmubox.offsetHeight){
+					heightnum=0;
+				}
+				//构建对象
+				var a=$("<a style='color: "+danmucolor+";font-weight: bolder;font-size: "+danmusize+"; position: absolute;left: 100%;top: "+heightnum+"px;display: block;'>"+text1.value+"</a>");
+				//添加
+				$(danmubox).append(a);
+				//清空
+				text1.value="";
+				//执行动画
+				$(a).animate({"left":"0px"},8000,"linear",function(){
+					//移除本体
+				$(this).remove();
+			});
+			}
+		}
+	</script>
+</html>
