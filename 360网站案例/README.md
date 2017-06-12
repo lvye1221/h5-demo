@@ -31,6 +31,8 @@
 
 ## 动画实现 ##
 
+【实现原理】 定义动画的2个状态，然后，让其动画，在一定时间后达到目标状态，从而实现对应的效果。
+
 ```
     /* 默认的间距值，相当于动画的初始状态 */
 	.first img {
@@ -50,11 +52,23 @@
 		*/
 		transition: all 1s ease-out 0.3s;
 	}
+
 ```
+
 
 深入理解CSS过渡transition 
 http://www.cnblogs.com/xiaohuochai/p/5347930.html
 
+### 盾牌发散效果 ###
+
+可以分块讲解，先用调试工具来实现手动添加样式；
+
+```
+.second img:nth-child(1) {
+	transform: translate(35px, 78px) rotate(45deg);
+}
+
+```
 
 
 # 问题及解决 #
@@ -66,8 +80,14 @@ http://www.cnblogs.com/xiaohuochai/p/5347930.html
 【答】 不小心将 .first 设成 透明色了，自然看不到啦
 
 
+## js代码不理解 ##
+
+建议分块进行讲解
+
 
 # 资料 #
 
 fullPage 的使用
 http://www.dowebok.com/77.html
+
+
