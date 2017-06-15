@@ -16,6 +16,34 @@ function move() {
 move();
 ```
 
+## 键盘控制 ##
+```
+
+var current = 0;
+document.onkeydown = function(e) {
+	console.log(e.keyCode);
+
+	if (e.keyCode == 37) {
+		current--;
+		if (current < 0) {
+			current = 0;
+		}
+	}
+
+	if (e.keyCode == 39) {
+		current++;
+		if (current >= 4) {
+			current = 4;
+		}
+	}
+
+	var t =  (20 * current) + "%";
+
+	
+	$(".car").css({"left":t}, 40);
+}
+```
+
 
 # 知识点 #
 
