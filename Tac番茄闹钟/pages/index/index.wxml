@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="title">
+    <text class="userinfo-nickname">选择一个任务</text>
+    <text class="userinfo-nickname">在接下来的25分钟，专注做这件事</text>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view>
