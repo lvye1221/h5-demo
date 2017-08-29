@@ -1,10 +1,45 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="title">
-    <text class="userinfo-nickname">选择一个任务</text>
-    <text class="userinfo-nickname">在接下来的25分钟，专注做这件事</text>
+  <view class="title-1">
+    <text>选择一个任务</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  
+  <view class="title-2">
+    <text>在接下来的25分钟，专注做这件事</text>
   </view>
+
+  <view class="item-container">
+	<view class="item border-bottom border-right">
+	  <image src="/image/工作.jpg"></image>
+      <text>工作</text>
+	</view>
+	<view class="item border-bottom border-right">
+	  <image src="/image/学习.png"></image>
+      <text>学习</text>
+	</view>
+	<view class="item border-bottom">
+	  <image src="/image/思考.png"></image>
+      <text>思考</text>
+	</view>
+	<view class="item border-right">
+	  <image src="/image/写作.png"></image>
+      <text>写作</text>
+	</view>
+	<view class="item border-right">
+	  <image src="/image/阅读.png"></image>
+      <text>阅读</text>
+	</view>
+	<view class="item">
+	  <image src="/image/运动.png"></image>
+      <text>运动</text>
+	</view>
+  </view>
+
+
+  <view class="btn">
+	<button type="default"> 开始计时 </button>
+  </view>
+
+
 </view>
+
