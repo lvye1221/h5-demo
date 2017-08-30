@@ -26,18 +26,18 @@
       <text>写作</text>
 	</view>
 	<view class="item border-right">
-	  <image src="/image/阅读.png"></image>
-      <text>阅读</text>
-	</view>
-	<view class="item">
 	  <image src="/image/运动.png"></image>
       <text>运动</text>
+	</view>
+	<view class="item">
+	  <image src="/image/阅读.png"></image>
+      <text>阅读</text>
 	</view>
   </view>
 
 
   <view class="btn">
-	<button type="default"> 开始计时 </button>
+	<button type="default" bindtap="startClock"> 开始计时 </button>
   </view>
 
 
