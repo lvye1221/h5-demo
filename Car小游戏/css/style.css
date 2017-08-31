@@ -44,15 +44,22 @@ html,body{
 
 #car{
 	width: 19%;
-	height: 20%;
-	background: red;
+	height: 35%;
+
 	position: absolute;
 	left: 40.5%;
-	bottom: 8%;
-	border: silver 3px solid;
-	border-radius: 10px;
-	box-sizing: border-box;
-	box-shadow: black 3px 10px 5px;	
+	bottom: 2%;
+
+	background: url(../img/bsj.png);
+	background-size: 100% 100%;
+
+
+	/* background: red; */
+
+	/* border: silver 3px solid; */
+	/* border-radius: 10px; */
+	/* box-sizing: border-box; */
+	/* box-shadow: black 3px 10px 5px; */
 }
 
 .otherCar{
@@ -65,6 +72,8 @@ html,body{
 	border-radius: 10px;
 	/*阴影*/
 	box-shadow: black 3px 10px 5px;
+
+	border: 1px solid red;
 }
 
 #restart{

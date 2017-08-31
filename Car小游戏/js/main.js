@@ -11,7 +11,7 @@ $(document).ready(function(){
 })
 //跑道动起来
 function move(){
-	$(".track").animate({"top":"-100%"},3000,"linear",function(){
+	$(".track").animate({"top":"-100%"},5000,"linear",function(){
 		$(".track").animate({"top":"0"},0);
 		move();
 	})
@@ -68,16 +68,19 @@ function makecar(){
 }
 
 function crash(div){
-	var  car=document.getElementById("car");
+	var car=document.getElementById("car");
+
 	setInterval(function(){
 		var left=car.offsetLeft;
 		var top=car.offsetTop;
-		var height=car.offsetHeight;
-		var width=car.offsetWidth;
+
+		var height=div.offsetHeight;
+		var width=div.offsetWidth;
 		
 		var divleft=div.offsetLeft;
 		var divtop=div.offsetTop;
-		//两者之间额距离容不下一辆车的时候，就撞了
+
+		// 两者之间额距离容不下一辆车的时候，就撞了
 		if(Math.abs(left-divleft)<width&&Math.abs(top-divtop)<height){
 			$(div).remove();
 			gameover();

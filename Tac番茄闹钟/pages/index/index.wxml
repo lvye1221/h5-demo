@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container" wx:if="{{!isTime}}">
   <view class="title-1">
     <text>选择一个任务 </text>
   </view>
@@ -44,3 +44,6 @@
 
 </view>
 
+<view class="container" wx:if="{{isTime}}">
+  <image src="/image/bg2.jpg" class="bg"/>
+</view>
