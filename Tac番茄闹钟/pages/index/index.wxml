@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="title-1">
-    <text>选择一个任务</text>
+    <text>选择一个任务 </text>
   </view>
   
   <view class="title-2">
@@ -9,27 +9,28 @@
   </view>
 
   <view class="item-container">
-	<view class="item border-bottom border-right">
+
+	<view class="item border-bottom border-right {{currentItem==1? 'active border-bottom-blue':''}}" bindtap="tapItem" data-id="1">
 	  <image src="/image/工作.jpg"></image>
       <text>工作</text>
 	</view>
-	<view class="item border-bottom border-right">
+	<view class="item border-bottom border-right" bindtap="tapItem" data-id="2">
 	  <image src="/image/学习.png"></image>
       <text>学习</text>
 	</view>
-	<view class="item border-bottom">
+	<view class="item border-bottom" bindtap="tapItem" data-id="3">
 	  <image src="/image/思考.png"></image>
       <text>思考</text>
 	</view>
-	<view class="item border-right">
+	<view class="item border-right" bindtap="tapItem" data-id="4">
 	  <image src="/image/写作.png"></image>
       <text>写作</text>
 	</view>
-	<view class="item border-right">
+	<view class="item border-right" bindtap="tapItem" data-id="5">
 	  <image src="/image/运动.png"></image>
       <text>运动</text>
 	</view>
-	<view class="item">
+	<view class="item" bindtap="tapItem" data-id="6">
 	  <image src="/image/阅读.png"></image>
       <text>阅读</text>
 	</view>
