@@ -1,0 +1,60 @@
+
+.left {
+	float: left;
+}
+
+.top_bar {
+	height: 40px;
+	background: #333;
+	color: #999;
+	left: 0;
+	top: 0;
+	position: fixed;
+	z-index: 10000;
+	width: 100%;
+	min-width: 990px;
+	font-family: Microsoft YaHei;
+}
+.top_bar .bar_left {
+	height: 40px;
+	margin: 0
+}
+.top_bar .bar_left li {
+	float: left;
+	display: inline-block;
+	height: 40px;
+}
+.top_bar .bar_left li a {
+	font-size: 14px;
+	color: #ccc;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 10px;
+	text-decoration: none;
+	display: inline-block;
+}
+a.top_bar_logo i {
+	font-weight: bold;
+	color: #fd8712;
+	font-style: normal;
+	line-height: 40px;
+}
+.top_bar .bar_tips a.close {
+	display: block;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	font-size: 18px;
+	color: #000;
+	height: 20px;
+	line-height: 20px;
+}
+.bar_message_tips {
+	right: 20px;
+}
+.bar_message_tips p {
+	display: none;
+}
+.top_bar .bar_tips a {
+	color: #fd8712;
+}
