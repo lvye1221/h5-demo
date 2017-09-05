@@ -1,0 +1,107 @@
+
+.header {
+	width: 100%;
+	padding-top: 15px;
+	height: 114px;
+}
+
+.header-area {
+	width: 990px;
+	margin: 0 auto 0 auto;
+	padding: 14px 0;
+    height: 90px;
+}
+
+.logo {
+    width: 155px;
+    height: 100px;
+    background: url(../img/logo.png) no-repeat left;
+    float: left;
+    padding-right: 15px;
+}
+
+.news-bg {
+	width: 150px;
+    height: 32px;
+    background: url(../img/newsbg1.png) no-repeat left;
+    float: left;
+
+	margin: 30px 10px 0px 10px;
+	padding-top: 20px;
+}
+
+.trans_form {
+	float: left;
+    margin: 0px auto;
+    width: 380px;
+    margin-top: 15px;
+}
+
+.tf_title {
+    height: 25px;
+    width: 380px;
+    font: 12px/26px "宋体"; 
+}
+
+
+.tf_title span {
+    float: left;
+    width: 62px;
+    height: 26px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #eee;
+}
+
+.tf_title span.hotbtn, .title span:hover {
+	background-color: #ba2020;
+    color: #fff;
+}
+
+/* 搜索框 */
+
+.tf_cont {
+	margin-top: 5px;
+}
+
+.tf_cont input {
+	float: left;
+}
+
+.tf_cont input.text {
+    color: #666;
+    width: 260px;
+    height: 12px;
+    font: 12px "宋体";
+    padding: 10px 5px;
+    border: 1px solid #ba2020;
+    border-right: 0;
+}
+
+.tf_cont input.submit {
+    font: bold 12px "宋体";
+    color: #fff;
+    background: #ba2020;
+    border: 0;
+    height: 34px;
+    width: 62px;
+}
+
+.search_btns {
+	float: right;
+    width: 240px;
+    margin-top: 43px;
+}
+
+.search_btns .btn {
+    float: right;
+    width: 80px;
+    height: 34px;
+    background: #999;
+    text-align: center;
+    font: 14px/34px "宋体";
+    color: #fff;
+    margin-right: 10px;
+}
