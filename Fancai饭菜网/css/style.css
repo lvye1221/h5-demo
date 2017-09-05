@@ -1,4 +1,18 @@
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a:link, a:visited {
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color:#f5451e;
+	text-decoration: none;
+}
+
 .left {
 	float: left;
 }
@@ -12,9 +26,14 @@
 	position: fixed;
 	z-index: 10000;
 	width: 100%;
-	min-width: 990px;
+	min-width: 800px;
 	font-family: Microsoft YaHei;
 }
+
+.top_bar a {
+	color: #f1f1f1;
+}
+
 .top_bar .bar_left {
 	height: 40px;
 	margin: 0
@@ -57,4 +76,52 @@ a.top_bar_logo i {
 }
 .top_bar .bar_tips a {
 	color: #fd8712;
+}
+
+
+/* 右边样式 */
+.right {
+	float: right;
+}
+
+.top_bar .bar_right {
+	list-style: none;
+}
+
+.top_bar .bar_right li {
+	float: left;
+	height: 40px;
+}
+
+.top_bar .bar_right li a {
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	padding: 0 10px;
+}
+
+.bar_img_item {
+	width: 40px;
+	line-height: 1em;
+    font-size: 10px;
+	color: #f1f1f1;
+	text-align: center;
+}
+
+.bar_img_item img {
+	width: 18px;
+	margin: 4px auto 2px;
+}
+
+
+.nr1 {
+	background-color: #59C3D1;
+}
+
+.nr2 {
+	background-color: #FFA859;
+}
+
+.nr3 {
+	background-color: #FE5761;
 }
