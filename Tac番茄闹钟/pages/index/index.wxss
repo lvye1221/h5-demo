@@ -82,8 +82,28 @@
     color: black;
 }
 
-.border-bottom-blue {
-	border-bottom: 2px solid  blue;
+.border-1 {
+	border-bottom: 2px solid #4664FF;
+}
+
+.border-2 {
+	border-bottom: 2px solid #35B83B;
+}
+
+.border-3 {
+	border-bottom: 2px solid #FF690F;
+}
+
+.border-4 {
+	border-bottom: 2px solid #4CCFFF;
+}
+
+.border-5 {
+	border-bottom: 2px solid #C554FF;
+}
+
+.border-6 {
+	border-bottom: 2px solid #FD3211;
 }
 
 

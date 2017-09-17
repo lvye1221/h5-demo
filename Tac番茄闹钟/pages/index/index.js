@@ -3,8 +3,8 @@
 var app = getApp()
 Page({
 	data: {
-		showPage1: false,
-		currentItem: 2
+		showPage1: true,
+		currentItem: 1
 	},
 
 	// 点击按钮
