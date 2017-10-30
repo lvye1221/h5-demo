@@ -10,27 +10,27 @@
 
   <view class="item-container">
 
-	<view class="item border-bottom border-right {{currentItem==1? 'active border-bottom-blue':''}}" bindtap="tapItem" data-id="1">
+	<view class="item border-bottom border-right {{currentItem==1? ('active border-' + currentItem):''}}" bindtap="tapItem" data-id="1">
 	  <image src="/image/工作.jpg"></image>
       <text>工作</text>
 	</view>
-	<view class="item border-bottom border-right" bindtap="tapItem" data-id="2">
+	<view class="item border-bottom border-right {{currentItem==2? ('active border-' + currentItem):''}}" bindtap="tapItem" data-id="2">
 	  <image src="/image/学习.png"></image>
       <text>学习</text>
 	</view>
-	<view class="item border-bottom" bindtap="tapItem" data-id="3">
+	<view class="item border-bottom {{currentItem==3? ('active border-' + currentItem):''}}" bindtap="tapItem" data-id="3">
 	  <image src="/image/思考.png"></image>
       <text>思考</text>
 	</view>
-	<view class="item border-right" bindtap="tapItem" data-id="4">
+	<view class="item border-right {{currentItem==4? ('active border-' + currentItem):''}}" bindtap="tapItem" data-id="4">
 	  <image src="/image/写作.png"></image>
       <text>写作</text>
 	</view>
-	<view class="item border-right" bindtap="tapItem" data-id="5">
+	<view class="item border-right {{currentItem==5? ('active border-' + currentItem):''}}" bindtap="tapItem" data-id="5">
 	  <image src="/image/运动.png"></image>
       <text>运动</text>
 	</view>
-	<view class="item" bindtap="tapItem" data-id="6">
+	<view class="item  {{currentItem==6? ('active border-' + currentItem):''}}"  bindtap="tapItem" data-id="6">
 	  <image src="/image/阅读.png"></image>
       <text>阅读</text>
 	</view>
