@@ -24,9 +24,24 @@ wx.getSystemInfo({
 ## 保存系统数据
 
 ```
-this.data = 
+// 直接在this对象中添加属性和值
+this.data
+
+// 获取
+this.data
+
 ```
 
+保存在系统中的data值
+
+```
+
+    that.setData({
+      message: '新消息'
+    })
+
+      console.log(that.data.message)
+```
 
 # 开发资料 #
 

@@ -5,30 +5,57 @@ var app = getApp()
 Page({
 	data: {
 		showPage1: true,
-		currentItem: 1
+		currentItem: 1,
+		mins: 25  // 目标分钟值
+	},
+
+	// current 为当前进度值
+	timerDraw: function (current) {
+		var target = this.data.mins * 60;
+
+		var deta = current / target * (Math.PI * 2) - Math.PI * 1/2; 
+		
+		// 计时圈
+		this.drawCircle({
+			r: this.w/4,
+			lineWidth: 3,
+			strokeStyle: "#FFFFFF",
+			endDegree: deta
+		});
+
+		// 保留原有图形来画
+		this.paint.draw(true)
 	},
 
 	init: function() {
+
+		// 外环
 		this.drawCircle({
 			r: this.w/2.5,
 			strokeStyle: "#5584AF"
 		});
+
+		// 中环
 		this.drawCircle({
 			r: this.w/3
 		});
 
+		// 内环
 		this.drawCircle({
 			r: this.w/4,
 			lineWidth: 3
 		});
 
+		
+		// 计时圈
 		this.drawCircle({
 			r: this.w/4,
 			lineWidth: 3,
 			strokeStyle: "#FFFFFF",
-			endDegree: Math.PI * 1/2
+			endDegree: - Math.PI * 1/2
 		});
 
+		// 更新到页面
 		this.paint.draw()
 	},
 
@@ -68,10 +95,17 @@ Page({
 			this.paint = wx.createCanvasContext('timer')
 
 			this.init();
+
+			var current = 0;
+			setInterval(() => {
+				current ++;
+				
+				this.timerDraw(current)
+
+			}, 100);
 		  }
 		})
 	
-		console.log("in");
 	},
 
 	// 点击按钮
