@@ -50,7 +50,7 @@
 
   <canvas canvas-id="timer" class="timer"></canvas>
   <text class="timer-1">计时中</text>
-  <text class="timer-2">23:54</text>
+  <text class="timer-2">{{strTime}}</text>
 
 
   <view class="btn">
