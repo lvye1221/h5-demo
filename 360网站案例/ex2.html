@@ -15,7 +15,7 @@
 	}
 
 	.shield {
-		width: 420px;
+		width: 428px;
 		height: 498px;
 	}
 
@@ -23,6 +23,11 @@
 		display: block;
 		float: left;
 	}
+
+	.shield img:nth-child(4), .shield img:nth-child(5), .shield img:nth-child(6)  {
+		height: 178px;
+	}
+
 
 	.shield img:nth-child(1) {
 		transform: translate(35px, 78px) rotate(45deg);
@@ -63,13 +68,12 @@
 
 	.shield.current img {
 		transform: translate(0, 0) rotate(0deg);
-
-		transition: all 3s ease-out 0.3s;
+		transition: 3s;
 	}
 
 	.second {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 	}
 
@@ -84,7 +88,7 @@
  <body>
 
 <div class="second">
-	<div class="shield">
+	<div class="shield current">
 		<img src="img/shield_1.png" />
 		<img src="img/shield_2.png" />
 		<img src="img/shield_3.png" />

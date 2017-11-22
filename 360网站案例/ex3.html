@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+
+  <style>
+	
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.current {
+	border: 1px solid red;
+}
+  </style>
+
+ </head>
+ <body>
+
+<div class="fullpage">
+	<div class="section page1"></div>
+	<div class="section page2"></div>
+	<div class="section page3"></div>	
+</div>
+
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery.fullPage.min.js"></script>
+<script>
+
+$(".fullpage").fullpage({
+	sectionsColor: ['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+	afterLoad: function(anchorLink, index) {
+		$('.section').removeClass('current');
+		
+		// 延时100毫秒执行
+		setTimeout(function () {
+			$('.section').eq(index - 1).addClass('current');
+		}, 100);
+	}
+})
+
+</script>
+
+ </body>
+</html>
