@@ -19,7 +19,8 @@ Page({
 			clickable: true,
 		}, {
 			id: 2,
-			iconPath: "/ofo_img/Alarm_icon.png",
+			// 警告按钮
+			iconPath: "/ofo_img/alarm_icon.png",
 			position: {
 				left: 34,
 				top: 68,
@@ -39,6 +40,7 @@ Page({
 			clickable: true,
 		}, {
 			id: 4,
+			// 隐藏转盘按钮
 			iconPath: "/ofo_img/hide_icon.png",
 			position: {
 				left: 0.45,
@@ -59,7 +61,8 @@ Page({
 			clickable: true,
 		}, {
 			id: 6,
-			iconPath: "/ofo_img/Ride_icon.png",
+			// 扫码按钮
+			iconPath: "/ofo_img/ride_icon.png",
 			position: {
 				left: 0.35,
 				top: 0.75,
@@ -69,6 +72,7 @@ Page({
 			clickable: true,
 		}, {
 			id: 7,
+			// 礼物页面
 			iconPath: "/ofo_img/activity_icon.png",
 			position: {
 				left: 0.8,
@@ -79,7 +83,8 @@ Page({
 			clickable: true,
 		}, {
 			id: 8,
-			iconPath: "/ofo_img/Positioning_icon02.png",
+			// 定位图标
+			iconPath: "/ofo_img/positioning_icon.png",
 			position: {
 				left: 0.85,
 				top: 0.5,
@@ -89,6 +94,7 @@ Page({
 			clickable: true,
 		}, {
 			id: 9,
+			// 服务页面
 			iconPath: "/ofo_img/service_icon.png",
 			position: {
 				left: 0.85,
@@ -237,19 +243,64 @@ Page({
 		
 	},
 
-	//showtip出现提示框事件
+	//showtip 显示提示框
     showtip: function() {
 		let controls = this.data.controls;
 
-		//  console.log(controls)
-
-		// 根据手机型号来调整图标的位置
+		// 调整显示图标的位置
 		controls[0].position.left = this.data.mywidth - 208;
 		controls[1].position.left = this.data.mywidth - 194;
 
 		this.setData({
 			controls: controls
 		})
+	},
+
+	//hidetip 隐藏提示框
+    hidetip: function() {
+		let controls = this.data.controls;
+
+		// 调整显示图标的位置
+		controls[0].position.left = this.data.mywidth - 48;
+		controls[1].position.left = this.data.mywidth - 34;
+
+		this.setData({
+			controls: controls
+		})
+	},
+
+
+	// 显示控制面板
+    showctrl: function() {
+		let controls = this.data.controls;
+
+		// 调整显示图标的位置
+		controls[2].position.top = this.data.myheight * 0.65;
+		controls[3].position.top = this.data.myheight - 0.7;
+		controls[3].iconPath = "/ofo_img/hide_icon.png"
+
+		this.setData({
+			controls: controls
+		})
+	},
+
+	// 显示控制面板
+    hidectrl: function() {
+		let controls = this.data.controls;
+
+		// 调整显示图标的位置
+
+		controls[2].position.top = this.data.myheight * 0.9;
+		controls[3].position.top = this.data.myheight - 0.93;
+		controls[3].iconPath = "/ofo_img/show_icon.png"
+
+		this.setData({
+			controls: controls
+		})
+	},
+
+	tap: function(e) {
+		console.log(e.controlId);
 	},
 
 	// 地图控件点击事件
@@ -259,25 +310,117 @@ Page({
 
 		switch(e.controlId) {
 		case 1:
+			// 提示建议
+			// 根据状态值进行判断
+			if (this.data.isShowTip) {
+				this.hidetip();
+				this.data.isShowTip = false;
+			} else {
+				this.showtip();
+				this.data.isShowTip = false;
+			}
 
-			this.showtip();
+			break;
 
-			// this.movetoPosition();
+			
+		case 2:
+			// 缴纳押金
+			if (this.data.isShowTip) {
+				this.hidetip();
+				this.data.isShowTip = false;
+			} else {
+				this.showtip();
+				this.data.isShowTip = false;
+			}
+
+
+			// wx.showModal({
+			// 	title: '缴纳押金',
+			// 	content: '跳转到缴纳押金页面！',
+			// })
+			
+
 			break;
 
 		case 3:
-			// 点击保障控件，跳转到报障页
-			wx.navigateTo({
-				url: '../warn/index'
-			});
+			// 白色圆盘
 
 			break;
-			// 点击头像控件，跳转到个人中心
+
+
+		case 4:
+			// 隐藏转盘按钮
+
+			// 根据状态值进行判断
+			if (this.data.isShowCtrl) {
+				this.hidectrl();
+				this.data.isShowCtrl = false;
+			} else {
+				this.showctrl();
+				this.data.isShowCtrl = true;
+			}
+
+			break;
+
 		case 5:
+			// 点击头像控件，跳转到个人中心
 			wx.navigateTo({
 				url: '../my/index'
 			});
 			break; 
+
+		case 6:
+			//  扫码功能
+			wx.scanCode({
+				success: (res) => {
+
+					let str = "";
+
+					str += "result:";
+					str += res.result;
+
+					
+					str += ", path:";
+					str += res.path;
+
+					console.log(res)
+
+					wx.showModal({
+						title: '测试',
+						content: str,
+					})
+				}
+			})
+			break; 
+
+
+		case 7:
+			// 礼物页面
+
+			wx.showModal({
+				title: '礼物',
+				content: '一大波礼物来袭！',
+			})
+
+			break; 
+
+
+		case 8:
+			// 定位图标
+
+			this.movetoPosition();
+
+			break; 
+
+
+
+		case 9:
+			// 服务页面
+
+			this.movetoPosition();
+
+			break; 
+
 
 		default:
 			break;

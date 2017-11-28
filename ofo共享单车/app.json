@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/warn/index",
     "pages/index/index",
+    "pages/warn/index",
     "pages/my/index",
     "pages/logs/logs"
   ],

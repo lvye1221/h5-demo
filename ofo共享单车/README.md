@@ -256,3 +256,111 @@ wx.request({
 
 
 
+
+
+
+```
+
+
+
+controls = [{
+          id: 1,
+          iconPath: "/ofo_img/tip_icon.png",
+          position: {
+            left: mywidth - 48,
+            top: 60,
+            width: 250,
+            height: 50,
+          },
+          clickable: true,
+        }, {
+          id: 2,
+          iconPath: "/ofo_img/Alarm_icon.png",
+          position: {
+            left: mywidth - 34,
+            top: 68,
+            width: 30,
+            height: 30,
+          },
+          clickable: true,
+        }, {
+          id: 3,
+          iconPath: "/ofo_img/yuanpan.png",
+          position: {
+            left: 0,
+            top: myheight * 0.65,
+            width: mywidth,
+            height: myheight * 0.35,
+          },
+          clickable: true,
+        }, {
+          id: 4,
+          iconPath: "/ofo_img/hide_icon.png",
+          position: {
+            left: mywidth * 0.45,
+            top: myheight * 0.7,
+            width: mywidth * 0.1,
+            height: 20,
+          },
+          clickable: true,
+        }, {
+          id: 5,
+          iconPath: "/ofo_img/personal_icon.png",
+          position: {
+            left: mywidth * 0.1,
+            top: myheight * 0.85,
+            width: 30,
+            height: 30,
+          },
+          clickable: true,
+        }, {
+          id: 6,
+          iconPath: "/ofo_img/Ride_icon.png",
+          position: {
+            left: mywidth * 0.35,
+            top: myheight * 0.75,
+            width: mywidth * 0.3,
+            height: mywidth * 0.3,
+          },
+          clickable: true,
+        }, {
+          id: 7,
+          iconPath: "/ofo_img/activity_icon.png",
+          position: {
+            left: mywidth * 0.8,
+            top: myheight * 0.85,
+            width: 30,
+            height: 30
+          },
+          clickable: true,
+        }, {
+          id: 8,
+          iconPath: "/ofo_img/Positioning_icon02.png",
+          position: {
+            left: mywidth * 0.85,
+            top: myheight * 0.5,
+            width: mywidth * 0.12,
+            height: mywidth * 0.12,
+          },
+          clickable: true,
+        }, {
+          id: 9,
+          iconPath: "/ofo_img/service_icon.png",
+          position: {
+            left: mywidth * 0.85,
+            top: myheight * 0.58,
+            width: mywidth * 0.12,
+            height: mywidth * 0.12,
+          },
+          clickable: true,
+        }]
+        self.setData({
+          controls: controls,
+        })
+
+
+
+
+
+
+```
