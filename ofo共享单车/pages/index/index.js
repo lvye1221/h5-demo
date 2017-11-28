@@ -5,7 +5,99 @@ Page({
 	data: {
 		scale: 15,
 		latitude: 0,
-		longitude: 0
+		longitude: 0,
+		controls: [{
+			// 警告标题
+			id: 1,
+			iconPath: "/ofo_img/tip_icon.png",
+			position: {
+				left: 48,
+				top: 60,
+				width: 250,
+				height: 50,
+			},
+			clickable: true,
+		}, {
+			id: 2,
+			iconPath: "/ofo_img/Alarm_icon.png",
+			position: {
+				left: 34,
+				top: 68,
+				width: 30,
+				height: 30,
+			},
+			clickable: true,
+		}, {
+			id: 3,
+			iconPath: "/ofo_img/yuanpan.png",
+			position: {
+				left: 0,
+				top: 0.65,
+				width: 0,
+				height: 0.35,
+			},
+			clickable: true,
+		}, {
+			id: 4,
+			iconPath: "/ofo_img/hide_icon.png",
+			position: {
+				left: 0.45,
+				top: 0.7,
+				width: 0.1,
+				height: 20,
+			},
+			clickable: true,
+		}, {
+			id: 5,
+			iconPath: "/ofo_img/personal_icon.png",
+			position: {
+				left: 0.1,
+				top: 0.85,
+				width: 30,
+				height: 30,
+			},
+			clickable: true,
+		}, {
+			id: 6,
+			iconPath: "/ofo_img/Ride_icon.png",
+			position: {
+				left: 0.35,
+				top: 0.75,
+				width: 0.3,
+				height: 0.3,
+			},
+			clickable: true,
+		}, {
+			id: 7,
+			iconPath: "/ofo_img/activity_icon.png",
+			position: {
+				left: 0.8,
+				top: 0.85,
+				width: 30,
+				height: 30
+			},
+			clickable: true,
+		}, {
+			id: 8,
+			iconPath: "/ofo_img/Positioning_icon02.png",
+			position: {
+				left: 0.85,
+				top: 0.5,
+				width: 0.12,
+				height: 0.12,
+			},
+			clickable: true,
+		}, {
+			id: 9,
+			iconPath: "/ofo_img/service_icon.png",
+			position: {
+				left: 0.85,
+				top: 0.58,
+				width: 0.12,
+				height: 0.12,
+			},
+			clickable: true,
+		}]
 	},
 
 	// 更新单车位置
@@ -52,6 +144,8 @@ Page({
 	},
 
 	onLoad: function () {
+
+
 		// 1.页面初始化 options为页面跳转所带来的参数
 
 		// 2.调用wx.getLocation系统API,获取并设置当前位置经纬度
@@ -60,8 +154,9 @@ Page({
 		wx.getLocation({
 			type: "gcj02",
 			// 获取经纬度成功回调
-			success: (res) => { // es6 箭头函数，可以解绑当前作用域的this指向，使得下面的this可以绑定到Page对象
 
+			// es6 箭头函数，可以解绑当前作用域的this指向，使得下面的this可以绑定到Page对象
+			success: (res) => { 
 				console.log(res.longitude);
 				console.log(res.latitude);
 
@@ -76,103 +171,102 @@ Page({
 				// 产生随机 标记位置
 				// console.log(this.data.latitude);
 
-
 				this.updateMarkers(res);
-
 			}
 		});
 
 
 		// 3.设置地图控件的位置及大小，通过设备宽高定位
-		wx.getSystemInfo({ // 系统API,获取系统信息，比如设备宽高
-			success: (res) => {
-				// 定义控件数组，可以在data对象初始化为[],也可以不初始化，取决于是否需要更好的阅读
-				this.setData({
-					controls: [{
-						id: 1,
-						iconPath: "/images/location.png",
-						position: { // 控件位置
-							left: 20, // 单位px
-							top: res.windowHeight - 80, // 根据设备高度设置top值，可以做到在不同设备上效果一致
-							width: 50, // 控件宽度/px
-							height: 50 // 控件高度/px
-						},
-						clickable: true // 是否可点击，默认为true,可点击
-					}, {
-						id: 2,
-						iconPath: '/images/use.png',
-						position: {
-							left: res.windowWidth/2 - 45,
-							top: res.windowHeight - 100,
-							width: 90,
-							height: 90
-						},
-						clickable: true
-					}, {
-						id: 3,
-						iconPath: '/images/warn.png',
-						position: {
-							left: res.windowWidth - 70,
-							top: res.windowHeight - 80,
-							width: 50,
-							height: 50
-						},
-						clickable: true
-					}, {
-						id: 4,
-						iconPath: '/images/marker.png',
-						position: {
-							left: res.windowWidth/2 - 11,
-							top: res.windowHeight/2 - 45,
-							width: 31,
-							height: 48
-						},
-						clickable: false
-					}, {
-						id: 5,
-						iconPath: '/images/avatar.png',
-						position: {
-							left: res.windowWidth - 68,
-							top: res.windowHeight - 155,
-							width: 45,
-							height: 45
-						},
-						clickable: true
-					}]
-				});
+		//this代表当前页面，定义self获取当前页面
+		var self = this;
+		
+		//获取当前手机信息
+		wx.getSystemInfo({
+			success: res => {
+				let mywidth = res.windowWidth;
+				let myheight = res.windowHeight;
+
+				//controls:[{},{},...]---在地图上显示控件，控件不随着地图移动
+				let controls = this.data.controls;
+
+				//  console.log(controls)
+
+				// 根据手机型号来调整图标的位置
+				controls[0].position.left = mywidth - 48;
+
+				controls[1].position.left = mywidth - 34;
+
+				controls[2].position.top = myheight * 0.65;
+				controls[2].position.width = mywidth;
+				controls[2].position.height = myheight * 0.35;
+				
+				controls[3].position.left = mywidth * 0.45;
+				controls[3].position.top = myheight * 0.7;
+				controls[3].position.width = mywidth * 0.1;
+				
+				controls[4].position.left = mywidth * 0.1;
+				controls[4].position.top = myheight * 0.85;
+				
+				controls[5].position.left = mywidth * 0.35;
+				controls[5].position.top = myheight * 0.75;
+				controls[5].position.width = mywidth * 0.3;
+				controls[5].position.height = mywidth * 0.3;
+
+				controls[6].position.left = mywidth * 0.8;
+				controls[6].position.top = myheight * 0.85;
+
+				controls[7].position.left = mywidth * 0.85;
+				controls[7].position.top = myheight * 0.5;
+				controls[7].position.width = mywidth * 0.12;
+				controls[7].position.height = mywidth * 0.12;
+
+				controls[8].position.left = mywidth * 0.85;
+				controls[8].position.top = myheight * 0.58;
+				controls[8].position.width = mywidth * 0.12;
+				controls[8].position.height = mywidth * 0.12;
+
+				self.setData({
+					controls: controls,
+					mywidth: mywidth,
+					myheight: myheight
+				})
 			}
-		});
+		})
 
 		// 4. 请求标记数组数据
-		// wx.request({
-		// 	url: 'https://www.easy-mock.com/mock/59098d007a878d73716e966f/ofodata/biyclePosition',
-		// 	data: {},
-		// 	method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-		// 	// header: {}, // 设置请求的 header
-		// 	success: (res) => {
-		// 		this.setData({
-		// 			markers: res.data.data
-		// 		});
-		// 	}
-		// });
-
 		
 	},
 
-	// 地图控件点击事件
-  controltap: function(e) {
-		// 判断点击的是哪个控件 e.controlId代表控件的id，在页面加载时的第3步设置的id
+	//showtip出现提示框事件
+    showtip: function() {
+		let controls = this.data.controls;
 
+		//  console.log(controls)
+
+		// 根据手机型号来调整图标的位置
+		controls[0].position.left = this.data.mywidth - 208;
+		controls[1].position.left = this.data.mywidth - 194;
+
+		this.setData({
+			controls: controls
+		})
+	},
+
+	// 地图控件点击事件
+    controltap: function(e) {
+		// 判断点击的是哪个控件 e.controlId代表控件的id，在页面加载时的第3步设置的id
 		console.log(e.controlId);
 
 		switch(e.controlId) {
-		// 点击定位控件
 		case 1:
-			this.movetoPosition();
+
+			this.showtip();
+
+			// this.movetoPosition();
 			break;
 
-			// 点击保障控件，跳转到报障页
 		case 3:
+			// 点击保障控件，跳转到报障页
 			wx.navigateTo({
 				url: '../warn/index'
 			});
@@ -226,8 +320,6 @@ Page({
 		if (e.type == "begin") {
 			
 		} else if (e.type == "end") {
-
-
 			this.mapCtx.getCenterLocation({
 				success: function(res) {
 					console.log(res.longitude);
@@ -236,13 +328,13 @@ Page({
 					that.updateMarkers(res);
 				}
 			});
-
 		}
 	},
 
-
 	onReady: function() {
 		// 页面渲染完成
+
+		
 	},
 
 	onShow: function() {

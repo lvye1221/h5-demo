@@ -1,0 +1,25 @@
+/* pages/weixiu/weixiu.wxss */
+.container{
+	height: 100vh;
+	width: 100%;
+	background: white;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.container view {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.container view image {
+	width: 60%;
+}
+
+.container view text {
+	font-size: 60rpx;
+	margin-top: -100rpx;
+}
+

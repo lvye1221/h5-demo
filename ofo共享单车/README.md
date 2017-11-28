@@ -1,11 +1,7 @@
 # ofo-xcx
 用微信小程序实现的OFO共享单车界面
 
-
-
-
 # 资源 #
-
 
 ## 参考文章 ##
 
@@ -205,5 +201,58 @@ block wx:if
 
 
 # 问题及解决 #
+
+WXSS 文件编译错误 4 Not Found
+
+
+小程序丨开发者工具更新后所有程序都报wxss编译错误【已解决】
+http://www.aiyingli.com/50384.html
+
+
+你好，请尝试在控制台输入openVendor() ，清除里面的wcsc wcsc.exe 然后重启工具
+
+
+
+
+
+
+﻿---------
+
+微信开发者工具 地图控件点击不了
+
+
+
+
+
+
+# 其他参考 #
+
+
+
+
+# 模拟数据 #
+
+请求模拟的数据
+```
+// 4. 请求标记数组数据
+wx.request({
+	url: 'https://www.easy-mock.com/mock/59098d007a878d73716e966f/ofodata/biyclePosition',
+	data: {},
+	method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+	// header: {}, // 设置请求的 header
+	success: (res) => {
+		this.setData({
+			markers: res.data.data
+		});
+	}
+});
+
+```
+
+
+# 获取数据 #
+
+控件更新数据
+
 
 
