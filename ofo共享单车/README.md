@@ -9,7 +9,16 @@
 
 ## 参考文章 ##
 
+
+给ofo共享单车撸一个微信小程序
 http://www.jianshu.com/p/3f9b78c68887?utm_campaign=hugo&utm_medium=reader_share&utm_content=note&utm_source=weixin-friends#
+
+
+系列篇 给ofo共享单车撸一个小程序
+http://www.jianshu.com/p/68e3b8927a77?utm_campaign=maleskine&utm_content=note&utm_medium=pc_all_hots&utm_source=recommendation
+
+
+
 
 ## 微信接口文档 ##
 
@@ -193,3 +202,8 @@ block wx:if
 ```
 
 注意： <block/> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
+
+
+# 问题及解决 #
+
+

@@ -5,7 +5,7 @@
        longitude="{{longitude}}" 
        scale="{{scale}}"
 	   controls="{{controls}}"
-	   bindcontroltap="bindcontroltap"
+	   bindcontroltap="controltap"
 	   markers="{{markers}}"
 	   bindmarkertap="bindmarkertap"
 	   polyline="{{polyline}}"

@@ -124,8 +124,8 @@ Page({
 						position: {
 							left: res.windowWidth/2 - 11,
 							top: res.windowHeight/2 - 45,
-							width: 22,
-							height: 45
+							width: 31,
+							height: 48
 						},
 						clickable: false
 					}, {
@@ -160,7 +160,7 @@ Page({
 	},
 
 	// 地图控件点击事件
-	bindcontroltap: function(e) {
+  controltap: function(e) {
 		// 判断点击的是哪个控件 e.controlId代表控件的id，在页面加载时的第3步设置的id
 
 		console.log(e.controlId);
@@ -213,7 +213,7 @@ Page({
 				width: 1,
 				dottedLine: true
 			}],
-			scale: 18
+			scale: this.data.scale
 		});
 	},
 
