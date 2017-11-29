@@ -13,6 +13,11 @@ Page({
 
 	// 页面加载
 	onLoad: function() {
+		
+	},
+
+
+	login: function() {
 		// 设置本页导航标题
 		wx.setNavigationBarTitle({
 			title: '个人中心'

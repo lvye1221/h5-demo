@@ -358,9 +358,14 @@ controls = [{
           controls: controls,
         })
 
+```
 
 
+---------
+禁止下拉刷新
 
 
-
+在配置json中添加
+```
+"enablePullDownRefresh": false
 ```
