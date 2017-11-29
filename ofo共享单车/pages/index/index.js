@@ -51,6 +51,7 @@ Page({
 			clickable: true,
 		}, {
 			id: 5,
+			// 
 			iconPath: "/ofo_img/personal_icon.png",
 			position: {
 				left: 0.1,
@@ -317,7 +318,7 @@ Page({
 				this.data.isShowTip = false;
 			} else {
 				this.showtip();
-				this.data.isShowTip = false;
+				this.data.isShowTip = true;
 			}
 
 			break;
@@ -330,7 +331,7 @@ Page({
 				this.data.isShowTip = false;
 			} else {
 				this.showtip();
-				this.data.isShowTip = false;
+				this.data.isShowTip = true;
 			}
 
 
@@ -396,11 +397,14 @@ Page({
 
 		case 7:
 			// 礼物页面
+			wx.navigateTo({
+				url: '../activity/index'
+			});
 
-			wx.showModal({
-				title: '礼物',
-				content: '一大波礼物来袭！',
-			})
+			// wx.showModal({
+			// 	title: '礼物',
+			// 	content: '一大波礼物来袭！',
+			// })
 
 			break; 
 

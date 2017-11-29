@@ -1,0 +1,32 @@
+/* pages/activity/index.wxss */
+
+
+.container {
+	width: 100%;
+	height: 100vh;
+	background-color: #F6F6F6;
+	overflow: hidden;
+	position: relative;
+}
+
+.line {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 1vh;
+}
+
+.news {
+	margin: 2vh auto;
+	width: 80%;
+	height: 95vh;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.news image {
+	width: 100%;
+	padding: 0;
+	margin: 5rpx 0;
+}
