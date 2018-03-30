@@ -1,8 +1,5 @@
-// pages/activity/index.js
+// pages/test/test.js
 Page({
-
-	
-
 
   /**
    * 页面的初始数据

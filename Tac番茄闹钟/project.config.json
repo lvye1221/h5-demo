@@ -8,9 +8,9 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.1.1",
-	"appid": "wx058aaea7082874b6",
-	"projectname": "ofo-2",
+	"libVersion": "1.6.6",
+	"appid": "touristappid",
+	"projectname": "%E7%95%AA%E8%8C%84%E9%97%B9%E9%92%9F",
 	"condition": {
 		"search": {
 			"current": -1,
