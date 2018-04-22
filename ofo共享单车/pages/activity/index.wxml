@@ -1,0 +1,20 @@
+<!--pages/activity/index.wxml-->
+
+<view class="container">
+
+  <image class="line" src="/ofo_img/活动中心img/bar.png" ></image>
+
+  <view class="news">
+
+	  <image src="/ofo_img/活动中心img/1.jpg" mode="aspectFit"></image>
+
+	  <image src="/ofo_img/活动中心img/2.jpg" mode="aspectFit"></image>
+
+	  <image src="/ofo_img/活动中心img/3.jpg" mode="aspectFit"></image>
+
+	  <image src="/ofo_img/活动中心img/4.jpg" mode="aspectFit"></image>
+
+
+  </view>	
+  
+</view>

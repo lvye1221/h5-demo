@@ -1,15 +1,20 @@
 # ofo-xcx
 用微信小程序实现的OFO共享单车界面
 
-
-
-
 # 资源 #
-
 
 ## 参考文章 ##
 
+
+给ofo共享单车撸一个微信小程序
 http://www.jianshu.com/p/3f9b78c68887?utm_campaign=hugo&utm_medium=reader_share&utm_content=note&utm_source=weixin-friends#
+
+
+系列篇 给ofo共享单车撸一个小程序
+http://www.jianshu.com/p/68e3b8927a77?utm_campaign=maleskine&utm_content=note&utm_medium=pc_all_hots&utm_source=recommendation
+
+
+
 
 ## 微信接口文档 ##
 
@@ -193,3 +198,174 @@ block wx:if
 ```
 
 注意： <block/> 并不是一个组件，它仅仅是一个包装元素，不会在页面中做任何渲染，只接受控制属性。
+
+
+# 问题及解决 #
+
+WXSS 文件编译错误 4 Not Found
+
+
+小程序丨开发者工具更新后所有程序都报wxss编译错误【已解决】
+http://www.aiyingli.com/50384.html
+
+
+你好，请尝试在控制台输入openVendor() ，清除里面的wcsc wcsc.exe 然后重启工具
+
+
+
+
+
+
+﻿---------
+
+微信开发者工具 地图控件点击不了
+
+
+
+
+
+
+# 其他参考 #
+
+
+
+
+# 模拟数据 #
+
+请求模拟的数据
+```
+// 4. 请求标记数组数据
+wx.request({
+	url: 'https://www.easy-mock.com/mock/59098d007a878d73716e966f/ofodata/biyclePosition',
+	data: {},
+	method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+	// header: {}, // 设置请求的 header
+	success: (res) => {
+		this.setData({
+			markers: res.data.data
+		});
+	}
+});
+
+```
+
+
+# 获取数据 #
+
+控件更新数据
+
+
+
+
+
+
+```
+
+
+
+controls = [{
+          id: 1,
+          iconPath: "/ofo_img/tip_icon.png",
+          position: {
+            left: mywidth - 48,
+            top: 60,
+            width: 250,
+            height: 50,
+          },
+          clickable: true,
+        }, {
+          id: 2,
+          iconPath: "/ofo_img/Alarm_icon.png",
+          position: {
+            left: mywidth - 34,
+            top: 68,
+            width: 30,
+            height: 30,
+          },
+          clickable: true,
+        }, {
+          id: 3,
+          iconPath: "/ofo_img/yuanpan.png",
+          position: {
+            left: 0,
+            top: myheight * 0.65,
+            width: mywidth,
+            height: myheight * 0.35,
+          },
+          clickable: true,
+        }, {
+          id: 4,
+          iconPath: "/ofo_img/hide_icon.png",
+          position: {
+            left: mywidth * 0.45,
+            top: myheight * 0.7,
+            width: mywidth * 0.1,
+            height: 20,
+          },
+          clickable: true,
+        }, {
+          id: 5,
+          iconPath: "/ofo_img/personal_icon.png",
+          position: {
+            left: mywidth * 0.1,
+            top: myheight * 0.85,
+            width: 30,
+            height: 30,
+          },
+          clickable: true,
+        }, {
+          id: 6,
+          iconPath: "/ofo_img/Ride_icon.png",
+          position: {
+            left: mywidth * 0.35,
+            top: myheight * 0.75,
+            width: mywidth * 0.3,
+            height: mywidth * 0.3,
+          },
+          clickable: true,
+        }, {
+          id: 7,
+          iconPath: "/ofo_img/activity_icon.png",
+          position: {
+            left: mywidth * 0.8,
+            top: myheight * 0.85,
+            width: 30,
+            height: 30
+          },
+          clickable: true,
+        }, {
+          id: 8,
+          iconPath: "/ofo_img/Positioning_icon02.png",
+          position: {
+            left: mywidth * 0.85,
+            top: myheight * 0.5,
+            width: mywidth * 0.12,
+            height: mywidth * 0.12,
+          },
+          clickable: true,
+        }, {
+          id: 9,
+          iconPath: "/ofo_img/service_icon.png",
+          position: {
+            left: mywidth * 0.85,
+            top: myheight * 0.58,
+            width: mywidth * 0.12,
+            height: mywidth * 0.12,
+          },
+          clickable: true,
+        }]
+        self.setData({
+          controls: controls,
+        })
+
+```
+
+
+---------
+禁止下拉刷新
+
+
+在配置json中添加
+```
+"enablePullDownRefresh": false
+```

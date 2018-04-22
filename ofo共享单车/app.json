@@ -1,7 +1,9 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/my/index",
+    "pages/my/index","pages/index/index",
+    "pages/test/test",
+    "pages/warn/index",
+    "pages/activity/index",
     "pages/logs/logs"
   ],
   "window":{

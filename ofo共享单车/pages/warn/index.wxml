@@ -1,0 +1,27 @@
+
+<view class="container">
+
+  <view bindtap="tapFeedback">
+	  <!-- mode="aspectFit" 支持图片宽高自适应 -->
+      <image src="/ofo_img/维修img/lock_icon.png" mode="aspectFit"></image>
+	  <text>上私锁</text>
+  </view>
+
+  <view bindtap="tapFeedback">
+      <image src="/ofo_img/维修img/breakdowm_icon.png" mode="aspectFit"></image>
+	  <text>车损坏</text>
+  </view>
+
+  <view bindtap="tapFeedback">
+      <image src="/ofo_img/维修img/nobike_icon.png" mode="aspectFit"></image>
+	  <text>没车用</text>
+  </view>
+
+  <view bindtap="tapFeedback">
+      <image src="/ofo_img/维修img/unpark_icon.png" mode="aspectFit"></image>
+	  <text>乱停车</text>
+  </view>
+
+
+</view>
+
